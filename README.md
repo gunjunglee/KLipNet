@@ -38,3 +38,76 @@ This model uses GRID corpus (http://spandh.dcs.shef.ac.uk/gridcorpus/)
 For those of you who are having difficulties in training the model (or just want to see the end results), you can download and use the weights provided here: https://github.com/rizkiarm/LipNet/tree/master/evaluation/models.
 
 More detail on saving and loading weights can be found in Keras FAQ.
+
+
+
+Training
+There are five different training scenarios that are (going to be) available:
+
+Prerequisites
+Download all video (normal) and align from the GRID Corpus website.
+Extracts all the videos and aligns.
+Create datasets folder on each training scenario folder.
+Create align folder inside the datasets folder.
+All current train.py expect the videos to be in the form of 100x50px mouthcrop image frames. You can change this by adding vtype = "face" and face_predictor_path (which can be found in evaluation/models) in the instantiation of Generator inside the train.py
+The other way would be to extract the mouthcrop image using scripts/extract_mouth_batch.py (usage can be found inside the script).
+Create symlink from each training/*/datasets/align to your align folder.
+You can change the training parameters by modifying train.py inside its respective scenarios.
+Random split (Unmaintained)
+Create symlink from training/random_split/datasets/video to your video dataset folder (which contains s* directory).
+
+Train the model using the following command:
+
+./train random_split [GPUs (optional)]
+Note: You can change the validation split value by modifying the val_split argument inside the train.py.
+
+Unseen speakers
+Create the following folder:
+
+training/unseen_speakers/datasets/train
+training/unseen_speakers/datasets/val
+Then, create symlink from training/unseen_speakers/datasets/[train|val]/s* to your selection of s* inside of the video dataset folder.
+
+The paper used s1, s2, s20, and s22 for evaluation and the remainder for training.
+
+Train the model using the following command:
+
+./train unseen_speakers [GPUs (optional)]
+Unseen speakers with curriculum learning
+The same way you do unseen speakers.
+
+Note: You can change the curriculum by modifying the curriculum_rules method inside the train.py
+
+./train unseen_speakers_curriculum [GPUs (optional)]
+Overlapped Speakers
+Run the preparation script:
+
+python prepare.py [Path to video dataset] [Path to align dataset] [Number of samples]
+Notes:
+
+[Path to video dataset] should be a folder with structure: /s{i}/[video]
+[Path to align dataset] should be a folder with structure: /[align].align
+[Number of samples] should be less than or equal to min(len(ls '/s{i}/*'))
+Then run training for each speaker:
+
+python training/overlapped_speakers/train.py s{i}
+Overlapped Speakers with curriculum learning
+Copy the prepare.py from overlapped_speakers folder to overlapped_speakers_curriculum folder, and run it as previously described in overlapped speakers training explanation.
+
+Then run training for each speaker:
+
+python training/overlapped_speakers_curriculum/train.py s{i}
+Note: As always, you can change the curriculum by modifying the curriculum_rules method inside the train.py
+
+Evaluation
+To evaluate and visualize the trained model on a single video / image frames, you can execute the following command:
+
+./predict [path to weight] [path to video]
+Example:
+
+./predict evaluation/models/overlapped-weights368.h5 evaluation/samples/id2_vcd_swwp2s.mpg
+Work in Progress
+This is a work in progress. Errors are to be expected. If you found some errors in terms of implementation please report them by submitting issue(s) or making PR(s). Thanks!
+
+## License
+Inha University
