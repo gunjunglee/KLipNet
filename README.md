@@ -164,14 +164,6 @@ If you found some errors in terms of implementation please report them by submit
 ![11](https://user-images.githubusercontent.com/32935365/60751021-cd7a0380-9fea-11e9-9321-f8f0c561632e.png)
 
 
-### - 예시 영상
-
-![a](https://user-images.githubusercontent.com/32935365/60869619-4044e200-a26a-11e9-82d6-e246158d233a.gif)
-
-![b](https://user-images.githubusercontent.com/32935365/60869711-71251700-a26a-11e9-8559-70a085a368ac.gif)
-
-![c](https://user-images.githubusercontent.com/32935365/60869723-797d5200-a26a-11e9-9b0d-7834224d417a.gif)
-
 ### - 기대효과
 * 다양한 플랫폼에서 청각장애인과 원활한 의사소통 기대
 * 주위에서 흔하게 볼 수 있는 음성인식 시스템에서도 주위환경에 소음이 있는 제한된 환경에서 입모양을 읽어 음성인식 보완 기대
