@@ -298,7 +298,7 @@ git clone https://github.com/kykymouse/koreanLipNet.git
 
 ### - prepare dataset for training
 필요한 준비물은 다음과 같다.
-1. 360 * 288 크기, 초당 25frame의 동영상을 준비한다.
+1. 400 * 320 크기, 초당 25frame의 동영상을 준비한다.(75frame과 비슷하면 padding가능)
 2. 각 동영상에 해당하는 align 파일을 만든다.
 3. grid.txt에 학습시키는 모든 align 문장이 들어있다.
 
