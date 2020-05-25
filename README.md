@@ -1,15 +1,10 @@
 # LipNet: End-to-End Sentence-level Lipreading
 Keras implementation of the method described in the paper 'LipNet: End-to-End Sentence-level Lipreading' by Yannis M. Assael, Brendan Shillingford, Shimon Whiteson, and Nando de Freitas (https://arxiv.org/abs/1611.01599).
-
+가장 많이 참고 논문
 ![LipNet performing prediction (subtitle alignment only for visualization)](assets/lipreading.gif)
 
 ## Results
-|       Scenario          | Epoch |  CER  |  WER  |  BLEU |
-|:-----------------------:|:-----:|:-----:|:-----:|:-----:|
-|  Unseen speakers [C]    |  N/A  |  N/A  |  N/A  |  N/A  |
-|    Unseen speakers      |  178  |  6.19%  |  14.19%  |  88.21%  |
-| Overlapped speakers [C] |  N/A  |  N/A  |  N/A  |  N/A  |
-|   Overlapped speakers   |  368  |  1.56%  |  3.38%  |  96.93%  |
+
 
 **Notes**:
 
@@ -47,6 +42,7 @@ Here is some ideas on what you can do next:
 
 ## Dataset
 This model uses GRID corpus (http://spandh.dcs.shef.ac.uk/gridcorpus/)
+데이터 제작중 google drive로 업로드할 수 있게
 
 ## Pre-trained weights
 For those of you who are having difficulties in training the model (or just want to see the end results), you can download and use the weights provided here: https://github.com/rizkiarm/LipNet/tree/master/evaluation/models. 
@@ -149,4 +145,4 @@ If you found some errors in terms of implementation please report them by submit
 - [ ] (Maybe) some proper scripts to do dataset stuff.
 
 ## License
-MIT License
+ License
