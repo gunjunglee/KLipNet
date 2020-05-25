@@ -1,10 +1,10 @@
 # LipNet: End-to-End Sentence-level Lipreading
 Keras implementation of the method described in the paper 'LipNet: End-to-End Sentence-level Lipreading' by Yannis M. Assael, Brendan Shillingford, Shimon Whiteson, and Nando de Freitas (https://arxiv.org/abs/1611.01599).
 가장 많이 참고 논문
-![LipNet performing prediction (subtitle alignment only for visualization)](assets/lipreading.gif)
+
 
 ## Results
-
+![imag](https://user-images.githubusercontent.com/46243547/82809044-2e8e1c80-9ec6-11ea-87a6-4eedf2424454.png)
 
 **Notes**:
 
